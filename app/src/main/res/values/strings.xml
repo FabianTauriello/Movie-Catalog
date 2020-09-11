@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Movie Catalog</string>
+    <string name="watchlist">Watchlist</string>
+    <string name="tv_series">TV Series</string>
+    <string name="movies">Movies</string>
+    <string name="text_placeholder">Text placeholder</string>
+    <string name="poster_content_description">Poster image for movie or TV show</string>
+    <string name="category_title_latest">Latest</string>
+    <string name="category_title_airing_today">Airing Today</string>
+    <string name="category_title_on_the_air">On The Air</string>
+    <string name="category_title_popular">Popular</string>
+    <string name="category_title_top_rated">Top Rated</string>
+    <string name="category_title_upcoming">Upcoming</string>
+    <string name="category_title_now_playing">Now Playing</string>
+    <string name="error_message">Failed to load data!</string>
+    <string name="see_all">See All</string>
+    <string name="poster_image_for_movie_or_tv_show">Poster image for movie or TV show</string>
+    <string name="category_heading">Category Heading</string>
 </resources>

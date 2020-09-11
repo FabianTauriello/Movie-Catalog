@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/moviesFragment">
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="io.github.fabiantauriello.moviecatalog.ui.MoviesFragment"
+        android:label="MoviesFragment"
+        tools:layout="@layout/media_thumbnail_categories" >
+        <action
+            android:id="@+id/action_moviesFragment_to_seeAllFragment"
+            app:destination="@id/seeAllFragment" />
+        <action
+            android:id="@+id/action_moviesFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/televisionSeriesFragment"
+        android:name="io.github.fabiantauriello.moviecatalog.ui.TelevisionSeriesFragment"
+        android:label="TelevisionSeriesFragment"
+        tools:layout="@layout/media_thumbnail_categories" >
+        <action
+            android:id="@+id/action_televisionSeriesFragment_to_seeAllFragment"
+            app:destination="@id/seeAllFragment" />
+        <action
+            android:id="@+id/action_televisionSeriesFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seeAllFragment"
+        android:name="io.github.fabiantauriello.moviecatalog.ui.SeeAllFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/media_thumbnail_grid" >
+        <argument
+            android:name="endpoint"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_seeAllFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="io.github.fabiantauriello.moviecatalog.ui.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="mediaItem"
+            app:argType="io.github.fabiantauriello.moviecatalog.domain.MediaItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/watchlistFragment"
+        android:name="io.github.fabiantauriello.moviecatalog.ui.WatchlistFragment"
+        android:label="fragment_watchlist"
+        tools:layout="@layout/media_thumbnail_grid" >
+        <action
+            android:id="@+id/action_watchlistFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+</navigation>
