@@ -67,7 +67,8 @@ class MoviesFragment : Fragment(), View.OnClickListener, ThumbnailClickListener 
     }
 
     private fun configureLiveDataObservers() {
-        // observe latest LiveData
+        // observe latest LiveData. latest data is not stored/updated through a recycler view so this
+        // is a bit different to the rest
         viewModel.movieLatest.observe(viewLifecycleOwner, Observer { movieLatest ->
             binding.incCategory1.textTitle.text = movieLatest.title
             Utils.setThumbnailImage(
@@ -107,6 +108,8 @@ class MoviesFragment : Fragment(), View.OnClickListener, ThumbnailClickListener 
                 findNavController().navigate(action)
             }
         }
+        // configure "see all" button click listeners. Latest category doesn't have a
+        // "see all" button because there is only one media item for the latest category
         binding.textCat2SeeAll.setOnClickListener(this)
         binding.textCat3SeeAll.setOnClickListener(this)
         binding.textCat4SeeAll.setOnClickListener(this)
@@ -115,9 +118,9 @@ class MoviesFragment : Fragment(), View.OnClickListener, ThumbnailClickListener 
 
     override fun onDestroyView() {
         super.onDestroyView()
+        // to avoid memory leaks
         _binding = null
     }
-
 
     override fun onClick(view: View?) {
         val endpoint = when (view?.id) {
@@ -127,6 +130,8 @@ class MoviesFragment : Fragment(), View.OnClickListener, ThumbnailClickListener 
             R.id.text_cat_5_see_all -> TheMovieDatabaseService.MOVIE_UPCOMING
             else -> throw IllegalStateException("Failed to assign an endpoint")
         }
+        // go to "see all" fragment, passing the appropriate endpoint as a string (e.g. "movie/now_playing")
+        // where it gets forwarded onto a viewmodel, and then repository for processing
         val action = MoviesFragmentDirections.actionMoviesFragmentToSeeAllFragment(endpoint)
         findNavController().navigate(action)
     }

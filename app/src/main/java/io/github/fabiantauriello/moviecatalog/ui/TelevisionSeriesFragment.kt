@@ -43,6 +43,7 @@ class TelevisionSeriesFragment : Fragment(), View.OnClickListener, ThumbnailClic
         configureLiveDataObservers()
         configureClickListeners()
 
+
         return binding.root
     }
 

@@ -6,8 +6,7 @@ import androidx.room.RoomDatabase
 import io.github.fabiantauriello.moviecatalog.app.MovieCatalog
 
 /**
- * My Room database object
- *
+ * My Room database object - acts as a singleton
  */
 @Database(
     entities = [MediaItemEntity::class, WatchlistEntity::class],

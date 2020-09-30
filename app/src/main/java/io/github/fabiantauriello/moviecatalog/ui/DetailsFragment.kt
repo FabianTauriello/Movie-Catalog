@@ -76,7 +76,7 @@ class DetailsFragment : Fragment() {
                 val entity = viewModel.mediaDetails.value?.asWatchlistEntity(isMovie)
                 entity?.let {
                     CoroutineScope(Dispatchers.IO).launch {
-                        MovieCatalogDatabase.getInstance().watchlistDao.insert(
+                        MovieCatalogDatabase.getInstance().watchlistDao.insert( // TODO this database operation should be moved to repository
                             it
                         )
                     }

@@ -72,6 +72,7 @@ interface TheMovieDatabaseService {
 
 /**
  * Main entry point for network access.
+ * This is a singleton
  */
 object TheMovieDatabaseApi {
 

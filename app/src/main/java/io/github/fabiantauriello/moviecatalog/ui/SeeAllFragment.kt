@@ -39,7 +39,7 @@ class SeeAllFragment : Fragment(), ThumbnailClickListener {
 
     private var showMovies = false
 
-    private var job: Job? = null
+    private var job: Job? = null // not required
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,11 +67,12 @@ class SeeAllFragment : Fragment(), ThumbnailClickListener {
         return binding.root
     }
 
+    // launch a coroutine
     private fun initializePaging() {
-        job?.cancel()
+        job?.cancel() // not required
         job = lifecycleScope.launch {
-            viewModel.retrieveMediaItemsAsFlow(args.endpoint).collectLatest {
-                allItemsAdapter.submitData(it.map {
+            viewModel.retrieveMediaItemsAsFlow(args.endpoint).collectLatest { latestPagingData ->
+                allItemsAdapter.submitData(latestPagingData.map {
                     MediaItem(
                         it.mediaId,
                         it.title,
@@ -143,7 +144,6 @@ class SeeAllFragment : Fragment(), ThumbnailClickListener {
     }
 
     override fun onThumbnailClick(mediaItem: MediaItem) {
-        Log.d("TAG", "onThumbnailClick: $mediaItem")
         val action = SeeAllFragmentDirections.actionSeeAllFragmentToDetailsFragment(mediaItem)
         findNavController().navigate(action)
     }

@@ -40,7 +40,7 @@ class SeeAllFragmentViewModel : ViewModel() {
     }
 
     fun searchApi(endpoint: String, searchQuery: String) {
-        CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.IO).launch { // could be viewmodelscope
             repository.searchApi(endpoint, searchQuery)
         }
     }

@@ -1,5 +1,6 @@
 package io.github.fabiantauriello.moviecatalog.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -35,11 +36,12 @@ class MoviesViewModel : ViewModel() {
         get() = _moviesUpcoming
 
     init {
-        // run api call with viewmodelscope to avoid leaks
+        // start coroutine and tie it to this viewmodel
+        // coroutine launched in this scope is automatically canceled if the ViewModel is cleared
+        // better than Dispatcher.io because that will not be cancelled and cause memory leak
         viewModelScope.launch {
             repository.fetchMovieData()
         }
     }
-
 
 }

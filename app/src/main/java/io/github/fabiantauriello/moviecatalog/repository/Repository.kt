@@ -25,6 +25,8 @@ import java.io.IOException
 /**
  *  Isolates data sources from the rest of the app.
  *  A repository mediates between data sources and the rest of the app.
+ *
+ *  Responsible for triggering API requests.
  */
 class Repository {
 
@@ -143,7 +145,7 @@ class Repository {
      * create stream of data for showing MANY media items.
      */
     fun createPagerFlow(
-        endpoint: String,
+        endpoint: String, // e.g. "movie/top_rated"
         remoteMediator: RemoteMediator
     ): Flow<PagingData<MediaItemEntity>> {
 
@@ -182,9 +184,13 @@ class Repository {
      */
     suspend fun searchApi(endpoint: String, searchQuery: String) {
         try {
+            // get search results for a given search query on either "search/movie" or "search/tv" endpoint
             val response =
                 TheMovieDatabaseApi.retrofitService.getSearchResults(endpoint, searchQuery)
+            // determine if a search for movies or tv is being made
             val isMovie = endpoint.substringAfter("/") == "movie"
+            // change each media item returned with search, based on isMovie (if a search for movies is being made,
+            // update the media item to isMovie = true, else isMovie will be false because a search for tv is being made).
             response.mediaItems.map { it.isMovie = isMovie }
             searchResults.postValue(response.mediaItems)
         } catch (exception: IOException) {

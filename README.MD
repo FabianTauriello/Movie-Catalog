@@ -1,5 +1,5 @@
 
-# Movie Catalog (Empatica submission)
+# Movie Catalog
 
 ## Brief
 
@@ -36,10 +36,3 @@ Once you have the project on your machine and Android Studio is open:
 * **Navigation Component** for navigation between fragments.
 
 See the source code for more documentation on my implementation.
-
-## My Overall Impressions of the Task
-
-I thoroughly enjoyed the assignment. Any time I start a new project I set out to learn somethimg new and this experience was no different. I've never used the Paging library but it made perfect sense this time around. It wasn't always easy though. At times, I struggled to grasp the functionality and purpose of the Remote Mediator, a class/concept to mediate the relationship between multiple different data sources. I also stumbled in the design stage of the project but as I gain experience and build a better understanding of the Android environment, I'm confident that whatever project I work on next, will be better because of Movie Catalog. If I had more time or a full development team, I would spend more time designing the system before rushing into the code.
-
-
-Thanks for giving me the the opportunity to apply with Empatica and I look forward to hearing what you think! - Fabian

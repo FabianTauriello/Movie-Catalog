@@ -17,8 +17,8 @@ private var THE_MOVIE_DATABASE_PAGE_INDEX = 1
 
 /**
  * Helps implement offline caching and pagination from network and database. RemoteMediator is part of the Paging 3.0 library
- * The general idea is that a local Room database will be the source of truth for displaying "See All" data
- * data will always be loaded from there. However, whenever we don't have any more data in the database, we
+ * The general idea is that a local Room database will be the source of truth for displaying "See All" data.
+ * Data will always be loaded from there. However, whenever we don't have any more data in the database, we
  * request more from the API and then save it in the database.
  */
 @OptIn(ExperimentalPagingApi::class)
