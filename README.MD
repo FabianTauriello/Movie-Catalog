@@ -44,6 +44,7 @@ Screenshots
 
 Demo
 
-![App Demo](/screenshots/demo.gif)
+<img src="/screenshots/demo.gif" width="200" height="200" />
+
 
 
