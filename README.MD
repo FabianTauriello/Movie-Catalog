@@ -37,12 +37,12 @@ Once you have the project on your machine and Android Studio is open:
 
 See the source code for more documentation on my implementation.
 
-Screenshots
+Screenshots:
 
 <img src="/screenshots/movies.png" width="350" height="650" />
 <img src="/screenshots/watchlist.png" width="350" height="650" />
 
-Demo
+Demo:
 
 <img src="/screenshots/demo.gif" width="350" height="650" />
 
