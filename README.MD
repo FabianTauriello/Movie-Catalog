@@ -36,3 +36,14 @@ Once you have the project on your machine and Android Studio is open:
 * **Navigation Component** for navigation between fragments.
 
 See the source code for more documentation on my implementation.
+
+Screenshots
+
+![Movies](/screenshots/movies.png?raw=true)
+![Watchlist](/screenshots/watchlist.png?raw=true)
+
+Demo
+
+![App Demo](/screenshots/demo.gif)
+
+
