@@ -44,7 +44,7 @@ Screenshots
 
 Demo
 
-<img src="/screenshots/demo.gif" width="200" height="200" />
+<img src="/screenshots/demo.gif" width="350" height="650" />
 
 
 
